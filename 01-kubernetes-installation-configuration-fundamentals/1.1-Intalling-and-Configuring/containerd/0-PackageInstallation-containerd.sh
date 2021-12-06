@@ -11,8 +11,8 @@ ssh aen@c1-cp1
 
 #0 - Disable swap, swapoff then edit your fstab removing any entry for swap partitions
 #You can recover the space with fdisk. You may want to reboot to ensure your config is ok. 
-swapoff -a
-vi /etc/fstab
+sudo swapoff -a
+sudo vi /etc/fstab
 
 
 ###IMPORTANT####
@@ -95,7 +95,7 @@ apt-cache policy kubelet | head -n 20
 
 #Install the required packages, if needed we can request a specific version. 
 #Use this version because in a later course we will upgrade the cluster to a newer version.
-VERSION=1.21.3-00
+VERSION=1.21.5-00
 sudo apt-get install -y kubelet=$VERSION kubeadm=$VERSION kubectl=$VERSION
 sudo apt-mark hold kubelet kubeadm kubectl containerd
 
