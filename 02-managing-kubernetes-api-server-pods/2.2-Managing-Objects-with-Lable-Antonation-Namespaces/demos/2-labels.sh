@@ -89,7 +89,7 @@ kubectl get pod -o wide
 #To remove a pod from load balancing, change the label used by the service's selector.
 #The ReplicaSet will respond by placing another pod in the ReplicaSet
 kubectl get pods --show-labels
-kubectl label pod hello-world-54575d5b77-9jh8h app=DEBUG --overwrite
+kubectl label pod hello-world-54575d5b77-5k69h app=DEBUG --overwrite
 
 #Check out all the labels in our pods
 kubectl get pods --show-labels
@@ -100,7 +100,7 @@ kubectl describe endpoints hello-world
 #To clean up, delete the deployment, service and the Pod removed from the replicaset
 kubectl delete deployment hello-world
 kubectl delete service hello-world
-kubectl delete pod PASTE_POD_NAME_HERE
+kubectl delete pod hello-world-54575d5b77-5k69h
 
 #Scheduling a pod to a node
 #Scheduling is a much deeper topic, we're focusing on how labels can be used to influence it here.

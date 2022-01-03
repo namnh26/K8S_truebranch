@@ -4,8 +4,8 @@ ssh aen@c1-node1
 
 #Disable swap, swapoff then edit your fstab removing any entry for swap partitions
 #You can recover the space with fdisk. You may want to reboot to ensure your config is ok. 
-sudo swapoff -a
-sudo vi /etc/fstab
+swapoff -a
+vi /etc/fstab
 
 
 ###IMPORTANT####

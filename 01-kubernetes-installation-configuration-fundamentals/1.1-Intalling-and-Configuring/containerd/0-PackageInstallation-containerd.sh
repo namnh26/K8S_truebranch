@@ -11,8 +11,8 @@ ssh aen@c1-cp1
 
 #0 - Disable swap, swapoff then edit your fstab removing any entry for swap partitions
 #You can recover the space with fdisk. You may want to reboot to ensure your config is ok. 
-sudo swapoff -a
-sudo vi /etc/fstab
+swapoff -a
+vi /etc/fstab
 
 
 ###IMPORTANT####
@@ -80,7 +80,6 @@ sudo systemctl restart containerd
 #Install Kubernetes packages - kubeadm, kubelet and kubectl
 #Add Google's apt repository gpg key
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-
 
 #Add the Kubernetes apt repository
 sudo bash -c 'cat <<EOF >/etc/apt/sources.list.d/kubernetes.list

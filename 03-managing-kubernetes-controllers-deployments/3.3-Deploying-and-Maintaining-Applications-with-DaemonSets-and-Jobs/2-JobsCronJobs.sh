@@ -21,7 +21,7 @@ kubectl describe job hello-world-job
 
 #Get the logs from stdout from the Job Pod
 kubectl get pods -l job-name=hello-world-job 
-kubectl logs hello-world-job-b8mf8
+kubectl logs hello-world-job-rlrtm 
 
 
 #Our Job is completed, but it's up to use to delete the Pod or the Job.
