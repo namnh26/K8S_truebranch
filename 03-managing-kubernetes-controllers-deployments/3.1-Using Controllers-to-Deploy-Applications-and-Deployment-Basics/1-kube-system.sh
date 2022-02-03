@@ -1,6 +1,6 @@
 #Log into the Control Plane Node to drive these demos.
 ssh aen@c1-cp1
-cd ~/k8s-advance-course/03-managing-kubernetes-controllers-deployments/3.1-Using Controllers-to-Deploy-Applications-and-Deployment-Basics
+cd ~cd ~/k8s-advance-course/03-managing-kubernetes-controllers-deployments/3.1-Using Controllers-to-Deploy-Applications-and-Deployment-Basics
 
 
 #Demo 1 - Examining System Pods and their Controllers
