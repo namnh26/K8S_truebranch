@@ -67,7 +67,7 @@ sudo kubeadm init \
 #Before moving on review the output of the cluster creation process including the kubeadm init phases, 
 #the admin.conf setup and the node join command
 
-#On c1-cp2 & c1-cp3
+#On c1-cp1, c1-cp2 & c1-cp3
 #172.16.94.7 is HA-Proxy
 kubeadm join 172.16.94.7:6443 --token abcdef.0123456789abcdef /
         --discovery-token-ca-cert-hash sha256:de383398f6390bcb7726176e4344f7bf2ba226de6a017866f00b55c381bc6794 /
@@ -123,3 +123,28 @@ sudo more /etc/kubernetes/manifests/kube-apiserver.yaml
 
 #Check out the directory where the kubeconfig files live for each of the control plane pods.
 ls /etc/kubernetes
+
+
+##HA=Proxy setup
+#Install HA-Proxy
+sudo apt update && sudo apt install -y haproxy
+
+#Edit haproxy config file & paste all these lines at the bottom of file
+sudo vim /etc/haproxy/haproxy.cfg
+
+frontend kubernetes-frontend
+    bind 172.16.94.7:6443   #haproxy machine IP
+    mode tcp
+    option tcplog
+    default_backend kubernetes-backend
+
+backend kubernetes-backend
+    mode tcp
+    option tcp-check
+    balance roundrobin
+    server c1-cp1 172.16.94.10:6443 check fall 3 rise 2
+    server c1-cp2 172.16.94.9:6443 check fall 3 rise 2
+    server c1-cp3 172.16.94.8:6443 check fall 3 rise 2
+
+#Restart haproxy service
+systemctl restart haproxy

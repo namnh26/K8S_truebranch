@@ -1,5 +1,5 @@
 ssh aen@c1-cp1
-cd ~/k8s-advance-course/06-maintaining-monitoring-troubleshooting-kubernetes/6.2-Logging-and-Monitoring-in-Kubernetes-Clusters
+cd ~/Kubernetes-Advance-Course/06-maintaining-monitoring-troubleshooting-kubernetes/6.2-Logging-and-Monitoring-in-Kubernetes-Clusters/
 
 
 #1 - Pods
