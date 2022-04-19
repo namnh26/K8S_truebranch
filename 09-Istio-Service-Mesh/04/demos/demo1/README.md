@@ -25,7 +25,7 @@ Find the legacy app container:
 ```
 docker container ls --filter name=k8s_sleep
 
-$id=$(docker container ls --filter name=k8s_sleep --format '{{ .ID}}')
+id=$(docker container ls --filter name=k8s_sleep --format '{{ .ID}}')
 ```
 
 Run a shell in the container:
