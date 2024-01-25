@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = BookInfo.Details
+build_property.ProjectDir = c:\Users\TIDO\Desktop\K8S\09-Istio-Service-Mesh\02\demos\src\details-api\
